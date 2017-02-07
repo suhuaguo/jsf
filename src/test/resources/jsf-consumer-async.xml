@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jsf="http://jsf.ipd.com/schema/jsf"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://jsf.ipd.com/schema/jsf http://jsf.ipd.com/schema/jsf/jsf.xsd">
+
+
+    <jsf:consumer id="helloService" interface="com.ipd.testjsf.HelloService" async="true"
+                  url="jsf://127.0.0.1:11090,jsf://127.0.0.1:11091"
+                  alias="JSF_0.0.1" retries="0" protocol="jsf">
+        <jsf:method name="getHashSet" timeout="5000"/>
+    </jsf:consumer>
+
+    <jsf:consumer id="helloService2" interface="com.ipd.testjsf.HelloService"
+                  url="jsf://127.0.0.1:11090,jsf://127.0.0.1:11091"
+                  alias="JSF_0.0.1" retries="0" protocol="jsf">
+        <jsf:method name="echoStr" async="true"/>
+    </jsf:consumer>
+
+    <jsf:consumer id="helloServiceG" interface="com.ipd.testjsf.HelloService" timeout="60000"
+                  url="jsf://127.0.0.1:11090,jsf://127.0.0.1:11091" generic="true"
+                  alias="JSF_0.0.1" retries="0" protocol="jsf">
+    </jsf:consumer>
+</beans>

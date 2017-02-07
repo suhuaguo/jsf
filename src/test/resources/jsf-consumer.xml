@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jsf="http://jsf.ipd.com/schema/jsf"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://jsf.ipd.com/schema/jsf  http://jsf.ipd.com/schema/jsf/jsf.xsd">
+
+    <jsf:consumer id="helloService" interface="com.ipd.testjsf.HelloService" retries="0"
+                  protocol="jsf" alias="JSF:0.0.1" timeout="60000" url="jsf://127.0.0.1:9090">
+    </jsf:consumer>
+    <jsf:consumer id="simpleService" interface="com.ipd.testjsf.SimpleService" retries="0"
+                  protocol="jsf" alias="JSF:0.0.1" timeout="60000">
+    </jsf:consumer>
+</beans>
